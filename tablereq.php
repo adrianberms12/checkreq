@@ -21,7 +21,7 @@
 
 <?php
 include_once'db.php';
-error_reporting(0);
+//error_reporting(0);
      $e_id=$_GET['id'];
      if ($e_id != "") {
         # code...
@@ -34,11 +34,7 @@ if ($result->num_rows > 0) {
 
 while($row = $result->fetch_assoc()) {
 $e_id = $row['id'];
-$posted = $row['posted'];
-$tas = $row['tas'];
-$Needed = $row['Needed'];
-$created = $row['created'];
-$Assigned = $row['Assigned'];
+
 }}}
 ?>
 
@@ -125,34 +121,17 @@ $Assigned = $row['Assigned'];
     </tr>
     <?php
 //error_reporting(0);
-include_once'db.php';
-
-$sql = "SELECT * FROM tasklist";
-$result = $conn->query($sql);
 
 
-if ($result->num_rows > 0) {
+//echo "<tr><td>""</td>";
+//echo "<td>""</td>";
+//echo "<td>""</td>";
+//echo "<td>""</td>";
+//echo "<td>""</td>";
+//echo "<td ><a class='button' href=index1.php?id=$e_id style='background:skyblue; border:black solid 1px; padding:5px;border-radius:10px; text-align:center; margin-left:10px;'>R</a> ""</td>";
+//echo "<td><a class='button' href=delete.php?id=$e_id style='background:red; border:black solid 1px; padding:5px; border-radius:10px;'>&#128465</a> 
+//<a class='button' href=index1.php?id=$e_id style='background:skyblue; border:black solid 1px; padding:5px;border-radius:10px; text-align:center; margin-top:10px;'>&#128394;</a></td>";
 
-while($row = $result->fetch_assoc()) {
-
-$posted=$row['posted'];
-$tas = $row['tas'];
-$Needed = $row['Needed'];
-$created = $row['created'];
-$Assigned = $row['Assigned'];
-$rate = $row['rate'];
-$e_id = $row['id'];
-
-echo "<tr><td>".$posted."</td>";
-echo "<td>".$tas."</td>";
-echo "<td>".$Needed."</td>";
-echo "<td>".$created."</td>";
-echo "<td>".$Assigned."</td>";
-echo "<td ><a class='button' href=index1.php?id=$e_id style='background:skyblue; border:black solid 1px; padding:5px;border-radius:10px; text-align:center; margin-left:10px;'>R</a> ".$rate."</td>";
-echo "<td><a class='button' href=delete.php?id=$e_id style='background:red; border:black solid 1px; padding:5px; border-radius:10px;'>&#128465</a> 
-<a class='button' href=index1.php?id=$e_id style='background:skyblue; border:black solid 1px; padding:5px;border-radius:10px; text-align:center; margin-top:10px;'>&#128394;</a></td>";
-
-}}
 ?>
 </table>
                                         </div>
